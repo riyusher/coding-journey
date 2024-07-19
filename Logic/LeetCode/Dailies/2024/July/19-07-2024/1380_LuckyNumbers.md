@@ -89,4 +89,4 @@ int* luckyNumbers (int** matrix, int matrixSize, int* matrixColSize, int* return
 
 ### References
 - **[LeetCode Problem Link](https://leetcode.com/problems/lucky-numbers-in-a-matrix/?envType=daily-question&envId=2024-07-19)**
-- **[Solution Code](Logic\LeetCode\Dailies\2024\July\19-07-2024\1380_LuckyNumbers.c)**
+- **[Solution Code](./19-07-2024/1380_LuckyNumbers.c)**
