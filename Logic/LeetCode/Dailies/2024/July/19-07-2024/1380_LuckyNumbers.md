@@ -2,7 +2,7 @@
 ### Date: 19-07-2024
 
 ## Intuition
-The problem requires finding numbers in a given matrix that are both the minimum element in their respective row and the maximum element in their respective column. These numbers are termed "lucky numbers".
+The problem requires finding numbers in a given matrix that are both the minimum element in their respective row and the maximum element in their respective column. So i thought iterating over all the matrix finding each of the numbers that meets both conditions could do the work.
 
 ## Approach
 
