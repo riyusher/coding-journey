@@ -1,6 +1,7 @@
-# LeetCode Daily Challenges Index - July 2024
+# LeetCode 75 Index
 
+## Array/String
 | Date       | Problem Title      | Language | Link to Code                                  | Link to Notes                                 |
 |------------|--------------------|----------|-----------------------------------------------|-----------------------------------------------|
-| 19/07/2024 | Lucky Number       | C        | [Code.C](./19-07-2024/1380.c)    | [Notes](./19-07-2024/1380.md)    |
+| 19/07/2024 | Merge Strings Alternately       | C        | [Code.C](./MergeStringsAlternately/1768.c)    | [Notes](./MergeStringsAlternately/1768.md)    |
 | ...        | ...                | ...      | ...                                           | ...                                           |
