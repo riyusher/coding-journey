@@ -1,7 +1,5 @@
 # [Exercise Name]
-### Date: YYYY-MM-DD
-
----
+### Date: DD/MM/YYYY
 
 ## Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
