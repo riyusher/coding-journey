@@ -1,0 +1,39 @@
+# Is Subsequence
+### Date: 16-08-2024
+
+## Intuition
+To determine if one string (s) is a subsequence of another (t), we need to check if the characters of s appear in t in the same order, without necessarily being consecutive. We can achieve this by iterating through t and comparing characters with s, advancing the index of s only when a match is found.
+
+## Approach
+1. **Initialize Index:**
+   - Create an index `sI` to keep track of the current position in string s, starting at 0.
+
+2. **Iterate Through t:**
+   - Iterate through each character in string t.
+   - If the current character in t matches the character at index `sI` in s, increment `sI`.
+
+3. **Check for Subsequence:**
+   - After iterating through t, if `sI` is equal to the length of s, it means all characters of s were found in t in the correct order, so s is a subsequence of t. Return `true`.
+   - Otherwise, s is not a subsequence of t, so return `false`.
+
+## Complexity
+
+### Time Complexity
+
+**O(n)**
+
+- Where n is the length of string t. The code iterates through t once, with each iteration taking constant time.
+
+### Space Complexity
+
+**O(1)**
+
+- The code uses constant extra space, independent of the input string lengths.
+
+## Code
+
+- **[Solution Code C](./Is_Subsequence.c)** (assuming the solution code is in a file named Is_Subsequence.c in the same directory)
+
+### References
+
+- **[LeetCode Problem Link](https://leetcode.com/problems/is-subsequence/?envType=study-plan-v2&envId=leetcode-75)**
