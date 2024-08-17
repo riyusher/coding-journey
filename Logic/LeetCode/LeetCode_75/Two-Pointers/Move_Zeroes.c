@@ -5,7 +5,7 @@ void moveZeroes(int* nums, int numsSize) {
         if (nums[endIndex] != 0) {
             int temp = nums[endIndex];
             nums[endIndex] = nums[startIndex];
-            
+            nums[startIndex++] = temp;
         }
     }
 }
