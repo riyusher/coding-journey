@@ -1,18 +1,26 @@
-# Coding Challenges
+# My Coding Exercises
 
-This repository documents my journey of solving coding challenges from platforms like LeetCode. Whenever I solve a problem i will upload the solution along with notes.
+This repository serves as a record of my coding practice journey, encompassing exercises from various platforms and personal projects. Here, you'll find solutions alongside notes and explanations for each challenge.
 
-## Structure
+## Organization
 
-- **Logic/**
-    - **LeetCode/**: Contains all LeetCode daily challenges.
-        - **Dailies/**: Daily solutions, organized by date.
-        - **Index.md**: An index of all solved problems for quick reference.
-- **CaptureTheFlag/**
-    - **HackTheBox/**
+**By Category (Labels)**
+
+Exercises are categorized using labels (e.g., #twopointers, #arrays, etc.) for easier filtering and exploration.
+
+**By Folder (Index)**
+
+For some exercise collections, like LeetCode Daily Challenges and LeetCode 75, an index file will be provided within the corresponding folder. These indexes offer a quick overview of solved problems and their locations.
 
 ## How to Use
 
-- Navigate to the specific platform folder.
-- Open `Index.md` to find the problem you are interested in.
-- Follow the links to view the code and notes.
+1. **Explore Labels:** Utilize the label filters on issues to discover exercises based on specific topics.
+2. **Browse by Folder (Optional):** Navigate through folders dedicated to specific platforms or exercise types.
+
+## Contributing (Optional)
+
+Feel free to contribute your own code solutions and notes by creating pull requests.
+
+## Disclaimer
+
+This repository focuses on learning and exploration. Solutions might not always be the most optimized or follow specific style guides. They aim to showcase the problem-solving approach.
