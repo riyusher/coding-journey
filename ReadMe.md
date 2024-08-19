@@ -4,18 +4,13 @@ This repository serves as a record of my coding practice journey, encompassing e
 
 ## Organization
 
-**By Category (Labels)**
-
-Exercises are categorized using labels (e.g., #twopointers, #arrays, etc.) for easier filtering and exploration.
-
 **By Folder (Index)**
 
 For some exercise collections, like LeetCode Daily Challenges and LeetCode 75, an index file will be provided within the corresponding folder. These indexes offer a quick overview of solved problems and their locations.
 
 ## How to Use
 
-1. **Explore Labels:** Utilize the label filters on issues to discover exercises based on specific topics.
-2. **Browse by Folder (Optional):** Navigate through folders dedicated to specific platforms or exercise types.
+1. **Browse by Folder (Optional):** Navigate through folders dedicated to specific platforms or exercise types.
 
 ## Contributing (Optional)
 
