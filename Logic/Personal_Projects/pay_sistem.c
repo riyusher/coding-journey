@@ -4,16 +4,15 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-#define MAXSIZE 100
+#define MAXSIZE 20
 #define TOTAL_PRODUCTS 3
 #define MAXOPTIONSIZE 5
 
 #define printInvalidCardMessage printf("\nThe entered card is not valid\n");
 
-
-
 typedef enum {
-    EXIT
+    EXIT,
+    CONTINUE
 } Input;
 
 typedef enum {
@@ -56,18 +55,32 @@ void displayMenu() {
     return;
 }
 
-bool isAProduct(char *product) {
-    if (islower(product[0])) {
-        product[0] = toupper(product[0]);
+void capitalizeFirstLetterAndLowerRest(char *str) {
+    if (islower(str[0])) {
+        str[0] = toupper(str[0]);
     }
 
-    for (int i = 0; i < TOTAL_PRODUCTS; i++) {
-        if (strcmp(product, products[i].name) == 0) {
-            return true;
+    for (int i = 1; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
+
+void cleanBuffer(char *str) {
+    str[strcspn(str, "\n")] = '\0';
+}
+
+int identifyProductId(char *product) {
+    capitalizeFirstLetterAndLowerRest(product);
+
+    cleanBuffer(product);
+
+    for (int productId = 0; productId < TOTAL_PRODUCTS; productId++) {
+        if (strcmp(product, products[productId].name) == 0) {
+            return productId;
         }
     }
 
-    return false;
+    return -1;
 }
 
 void lowerCaseString(char *str) {
@@ -78,29 +91,40 @@ void lowerCaseString(char *str) {
     return;
 }
 
-bool readOrderContinue() {
-    printf("¿Desea ordenar algo mas? (Si/No)");
+Input readOrderContinue() {
+    Input input;
+    printf("¿Desea ordenar algo mas? (Si/No)\n");
 
     char option[MAXOPTIONSIZE];
     fgets(option, MAXOPTIONSIZE, stdin);
 
     lowerCaseString(option);
+    cleanBuffer(option);
 
     while (strcmp(option, "si") != 0 && strcmp(option, "no") != 0) {
-        printf("Digite una opción Valida (Si/No)\n");
+        printf("Digite una opcion Valida (Si/No)\n");
         printf("¿Desea ordenar algo mas? (Si/No)\n");
         fgets(option, MAXOPTIONSIZE, stdin);
         lowerCaseString(option);
+        cleanBuffer(option);
     }
     
-    return strcmp(option, "si") == 0;
+    if (strcmp(option, "si") == 0) {
+        input = CONTINUE;
+    }
+    else {
+        input = EXIT;
+    }
+
+    return input;
 }
 
-char* readProductRequest() {
-    char *str = malloc(MAXSIZE * sizeof(char));
+int readProductRequest() {
+    char *input = malloc(MAXSIZE * sizeof(char));
     printf("Introduzca el nombre del producto que desea\n");
-    fgets(str, MAXSIZE, stdin);
-    return str;
+    fgets(input, MAXSIZE, stdin); 
+    
+    return identifyProductId(input);
 }
 
 int readAmountRequest() {
@@ -250,13 +274,24 @@ bool isEnoughMoneyInCard(const double money, const double total) {
 int main(void) {
     struct Cart cart;
     initializeCart(&cart);
-
+    Input input = CONTINUE;
+    
+    do {    
+        displayMenu();
+        int product = readProductRequest();
+        int quantity = readAmountRequest();
+        addProduct(&cart, product, quantity);
+        displayCart(&cart);
+        input = readOrderContinue();
+    } while (input == CONTINUE);
+    
     /*
     displayMenu();
-    addProduct(&cart, 0, 2);
-    addProduct(&cart, 1, 3);
+    int product = readProductRequest();
+    int quantity = readAmountRequest();
+    addProduct(&cart, product, quantity);
     displayCart(&cart);
     */
-    
+
     return 0;
 }
