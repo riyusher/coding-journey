@@ -4,7 +4,10 @@
 #include <string>
 #include <algorithm>
 
+#include "shopping_cart.cpp"
+
 #define MAX_INPUT_PRODUCT_SIZE 20
+#define LARGEST_PRODUCT_SIZE 9
 #define TOTAL_PRODUCTS 3
 #define MAXOPTIONSIZE 5
 #define ROW_DISPLAY_CHANGE 4
@@ -54,15 +57,13 @@ void initializeCart(Cart& cart) {
 
 void displayMenu() {
     for (int i = 0; i < TOTAL_PRODUCTS; i++) {
-        cout << setw(2) << i + 1 << ".- " << 
-        setw(MAX_INPUT_PRODUCT_SIZE) << left << products[i].name << 
-        " $" << fixed << setprecision(2) << products[i].price << "\t";
-
         if (i != 0 && i % ROW_DISPLAY_CHANGE == 0) {
             cout << endl;
         }
 
-        
+        cout << setw(2) << i + 1 << ".- " << 
+        setw(LARGEST_PRODUCT_SIZE) << left << products[i].name << 
+        " $" << fixed << setprecision(2) << products[i].price << "\t";
     }
 
     cout << endl;
@@ -271,6 +272,7 @@ bool isEnoughMoneyInCard(const double money, const double total) {
 }
 
 int main(void) {
+    /*
     struct Cart cart;
     initializeCart(cart);
     INPUT input = CONTINUE;
@@ -284,7 +286,7 @@ int main(void) {
         input = readOrderContinue();
     } while (input == CONTINUE);
     
-    /*
+    
     displayMenu();
     int product = readProductRequest();
     int quantity = readAmountRequest();
