@@ -1,0 +1,34 @@
+Exercise 1768: Merge Strings Alternately
+========================================
+
+Problem Description:
+--------------------
+Here, describe the problem (you can pull the problem statement from LeetCode).
+
+Approach 1: Brute Force
+-----------------------
+In this approach, we alternate between two strings character by character.
+
+.. code-block:: c
+   :caption: C Implementation - Brute Force
+   :name: C_bruteforce
+
+   .. include:: 1768_c_code.c
+
+You can see the full solution in C :ref:`here <C_bruteforce>`.
+
+Approach 2: Greedy
+------------------
+In this approach, we take advantage of the greedy algorithm to merge strings efficiently.
+
+.. code-block:: python
+   :caption: Python Implementation - Greedy
+   :name: Python_greedy
+
+   .. include:: 1768_py_code.py
+
+You can see the Python solution :ref:`here <Python_greedy>`.
+
+Other Language Implementations:
+-------------------------------
+- C++ implementation: :download:`1768_cpp_code.cpp <1768_cpp_code.cpp>`
